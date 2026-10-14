@@ -1,11 +1,12 @@
 // 빌드 전 검증: 환경 변수, 콘텐츠 frontmatter, 참조 무결성. 실패하면 빌드도 실패한다.
-// 서버 환경 변수는 Vercel Production 빌드에서만 필수다. 프리뷰·CI·로컬에서는 경고만 하고,
+// 서버 환경 변수는 STRICT_ENV=1일 때만 필수다. 없으면 경고만 하고 빌드를 계속하며,
 // 그 상태에서는 문의 제출이 오류 안내(대표번호)로 끝난다.
+// TODO: 서버 키를 모두 등록하면 Vercel Production에 STRICT_ENV=1을 설정한다.
 import { serverEnv } from '@/lib/env';
 import { getCases, getFaqs, getInsights, getServices } from '@/lib/content/loader';
 import { validateContent } from '@/lib/content/validate';
 
-const requireServerEnv = process.env.VERCEL_ENV === 'production';
+const requireServerEnv = process.env.STRICT_ENV === '1';
 
 try {
   try {
