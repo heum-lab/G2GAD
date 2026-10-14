@@ -48,3 +48,6 @@ next-env.d.ts
 /test-results
 /.lighthouseci
 __pycache__/
+
+.vercel
+.env*

@@ -1,4 +1,5 @@
 import { timingSafeEqual } from 'node:crypto';
+import { connection } from 'next/server';
 import { serverEnv } from '@/lib/env';
 import { purgeLeadsOlderThan } from '@/lib/inquiry/store';
 
@@ -12,7 +13,15 @@ function isAuthorized(request: Request, secret: string) {
 }
 
 export async function GET(request: Request) {
-  const env = serverEnv();
+  // 빌드 시 프리렌더하지 않고 요청 때만 실행한다.
+  await connection();
+  let env;
+  try {
+    env = serverEnv();
+  } catch {
+    // 서버 환경 변수가 없는 환경(프리뷰 등)
+    return Response.json({ ok: false }, { status: 503 });
+  }
   if (!isAuthorized(request, env.CRON_SECRET)) {
     return Response.json({ ok: false }, { status: 401 });
   }

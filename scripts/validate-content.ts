@@ -1,10 +1,22 @@
 // 빌드 전 검증: 환경 변수, 콘텐츠 frontmatter, 참조 무결성. 실패하면 빌드도 실패한다.
+// 서버 환경 변수는 Vercel Production 빌드에서만 필수다. 프리뷰·CI·로컬에서는 경고만 하고,
+// 그 상태에서는 문의 제출이 오류 안내(대표번호)로 끝난다.
 import { serverEnv } from '@/lib/env';
 import { getCases, getFaqs, getInsights, getServices } from '@/lib/content/loader';
 import { validateContent } from '@/lib/content/validate';
 
+const requireServerEnv = process.env.VERCEL_ENV === 'production';
+
 try {
-  serverEnv();
+  try {
+    serverEnv();
+  } catch (error) {
+    if (requireServerEnv) throw error;
+    console.warn(
+      `[경고] 서버 환경 변수가 없어 문의 저장·알림이 동작하지 않습니다.
+${error instanceof Error ? error.message : error}`,
+    );
+  }
   const errors = validateContent();
   if (errors.length > 0) {
     console.error(`콘텐츠 참조 검증 실패 (${errors.length}건):`);
