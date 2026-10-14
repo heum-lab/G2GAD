@@ -1,0 +1,44 @@
+- id: aeo-geo-01
+  category: service
+  services: [aeo-geo]
+  featured: false
+  updatedAt: 2026-10-14
+  question: "AEO와 GEO는 서로 다른 작업인가요?"
+  answer: |
+    AEO와 GEO는 목표가 거의 같아 실무에서는 함께 진행하는 경우가 많습니다. AEO는 질문에 대한 직접 답변으로 선택되는 것을, GEO는 생성형 AI가 답변을 만들 때 출처로 인용되는 것을 강조하는 용어입니다. 두 작업 모두 질문에 바로 답하는 콘텐츠와 정확한 회사 정보 정비가 기본입니다.
+
+- id: aeo-geo-02
+  category: service
+  services: [aeo-geo]
+  featured: false
+  updatedAt: 2026-10-14
+  question: "홈페이지가 없어도 AEO·GEO를 진행할 수 있나요?"
+  answer: |
+    홈페이지가 없어도 일부 작업은 가능하지만, 브랜드가 직접 관리하는 공식 출처가 있는 편이 유리합니다. AI 검색은 여러 출처의 정보를 비교해 답변을 만들기 때문에 기준이 되는 공식 정보가 필요합니다. 홈페이지가 없는 경우에는 현재 보유한 채널을 기준으로 가능한 범위를 상담에서 안내합니다.
+
+- id: aeo-geo-03
+  category: service
+  services: [aeo-geo]
+  featured: false
+  updatedAt: 2026-10-14
+  question: "AEO·GEO의 성과는 어떻게 확인하나요?"
+  answer: |
+    주요 질문에 대한 AI 답변에서 브랜드가 언급되는지, 어떤 출처가 인용되는지를 추적해 확인합니다. AI 검색을 통한 사이트 유입과 문의 변화도 함께 살펴봅니다. 구체적인 측정 지표는 목표에 맞춰 진단 단계에서 함께 정합니다.
+
+- id: aeo-geo-04
+  category: service
+  services: [aeo-geo]
+  featured: false
+  updatedAt: 2026-10-14
+  question: "AEO·GEO를 하면 AI 답변에 반드시 노출되나요?"
+  answer: |
+    아니요, AI 답변에 노출되는 결과를 약속드릴 수는 없습니다. 답변 구성 방식은 각 AI 서비스가 결정하며 예고 없이 바뀔 수 있습니다. AEO·GEO는 브랜드 정보가 정확하게 이해되고 인용될 가능성을 높이는 작업입니다.
+
+- id: aeo-geo-05
+  category: service
+  services: [aeo-geo]
+  featured: false
+  updatedAt: 2026-10-14
+  question: "AEO·GEO 효과는 얼마나 지나야 나타나나요?"
+  answer: |
+    효과가 나타나는 시점은 업종, 경쟁 강도, 현재 콘텐츠 상태에 따라 달라집니다. AI 서비스가 새 정보를 반영하는 주기도 서비스마다 다릅니다. 예상 일정은 현황 진단 과정에서 함께 논의합니다.

@@ -1,0 +1,26 @@
+- id: smart-block-01
+  category: service
+  services: [smart-block]
+  featured: false
+  updatedAt: 2026-10-14
+  question: "스마트블록은 기존 블로그 노출과 무엇이 다른가요?"
+  answer: |
+    스마트블록은 콘텐츠를 채널 종류가 아니라 주제 단위로 묶어 보여 준다는 점이 다릅니다. 블로그, 카페 등 여러 채널의 글이 하나의 주제 묶음 안에 함께 나타날 수 있습니다. 그래서 채널보다 주제와 검색 의도를 기준으로 콘텐츠를 기획해야 합니다.
+
+- id: smart-block-02
+  category: service
+  services: [smart-block]
+  featured: false
+  updatedAt: 2026-10-14
+  question: "스마트블록은 어떤 업종에 적합한가요?"
+  answer: |
+    스마트블록은 고객이 구매 전에 정보를 폭넓게 검색하는 업종에 적합합니다. 여행, 육아, 인테리어, 건강, 교육처럼 세부 주제가 다양한 분야가 대표적입니다. 검색어에 주제 묶음이 나타나지 않는 업종은 다른 방식이 더 맞을 수 있어 사전 분석이 필요합니다.
+
+- id: smart-block-03
+  category: service
+  services: [smart-block]
+  featured: false
+  updatedAt: 2026-10-14
+  question: "스마트블록 노출은 계속 유지되나요?"
+  answer: |
+    노출이 계속 유지된다고 말씀드릴 수는 없습니다. 주제 묶음의 구성과 노출 콘텐츠는 검색 흐름과 플랫폼 알고리즘에 따라 바뀝니다. 그래서 검색 결과를 꾸준히 점검하고 콘텐츠를 보완하는 운영이 필요합니다.

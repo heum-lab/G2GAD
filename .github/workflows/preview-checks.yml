@@ -1,0 +1,49 @@
+# Vercel 배포가 끝나면 그 URL을 대상으로 E2E와 Lighthouse CI를 실행한다. (ARCHITECTURE §11)
+# 필요한 저장소 시크릿: VERCEL_AUTOMATION_BYPASS_SECRET (Vercel 배포 보호 우회)
+name: Preview checks
+
+on:
+  deployment_status:
+
+jobs:
+  e2e:
+    if: github.event.deployment_status.state == 'success'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      PLAYWRIGHT_BASE_URL: ${{ github.event.deployment_status.environment_url }}
+      VERCEL_AUTOMATION_BYPASS_SECRET: ${{ secrets.VERCEL_AUTOMATION_BYPASS_SECRET }}
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: ${{ github.event.deployment.sha }}
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 24
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm exec playwright install --with-deps chromium
+      - run: pnpm test:e2e
+
+  lighthouse:
+    if: github.event.deployment_status.state == 'success'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      LHCI_BASE_URL: ${{ github.event.deployment_status.environment_url }}
+      VERCEL_AUTOMATION_BYPASS_SECRET: ${{ secrets.VERCEL_AUTOMATION_BYPASS_SECRET }}
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: ${{ github.event.deployment.sha }}
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 24
+      - name: Lighthouse CI
+        run: npx --yes @lhci/cli@0.15.1 autorun --config=lighthouserc.cjs
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: lighthouse-reports
+          path: .lighthouseci/reports

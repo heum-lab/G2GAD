@@ -1,0 +1,26 @@
+- id: blog-01
+  category: service
+  services: [blog]
+  featured: false
+  updatedAt: 2026-10-14
+  question: "브랜드 블로그와 체험단 중 무엇을 먼저 해야 하나요?"
+  answer: |
+    상황에 따라 다르지만, 브랜드를 검색했을 때 공식 정보가 없다면 브랜드 블로그를 먼저 정비하는 것이 일반적입니다. 공식 정보는 있는데 실제 사용 후기가 부족하다면 체험단이 우선입니다. 현재 검색 결과를 진단한 뒤 우선순위를 제안합니다.
+
+- id: blog-02
+  category: service
+  services: [blog]
+  featured: false
+  updatedAt: 2026-10-14
+  question: "체험단 블로거는 어떻게 선정하나요?"
+  answer: |
+    블로거의 활동 분야가 상품이나 매장과 맞는지, 평소 글의 품질이 어떤지를 기준으로 선정합니다. 방문자 수만 보고 선정하면 주제가 맞지 않아 독자 반응이 낮을 수 있습니다. 선정 기준은 브랜드와 협의해 정합니다.
+
+- id: blog-03
+  category: service
+  services: [blog]
+  featured: false
+  updatedAt: 2026-10-14
+  question: "블로그 글을 쓰면 검색 결과 상단에 노출되나요?"
+  answer: |
+    상단 노출을 약속드릴 수는 없습니다. 검색 노출 위치는 플랫폼 알고리즘과 경쟁 콘텐츠에 따라 달라지기 때문입니다. 블로그 마케팅·체험단은 고객이 찾는 정보를 담은 콘텐츠를 쌓아 노출 가능성을 높이는 작업입니다.

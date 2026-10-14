@@ -1,0 +1,26 @@
+- id: shortform-01
+  category: service
+  services: [shortform]
+  featured: false
+  updatedAt: 2026-10-14
+  question: "촬영과 편집까지 맡길 수 있나요?"
+  answer: |
+    촬영과 편집을 포함해 진행할 수 있으며, 구체적인 범위는 상담에서 정합니다. 브랜드가 촬영한 원본을 받아 편집만 진행하는 방식도 가능합니다. 범위에 따라 견적이 달라지므로 필요한 작업을 먼저 확인합니다.
+
+- id: shortform-02
+  category: service
+  services: [shortform]
+  featured: false
+  updatedAt: 2026-10-14
+  question: "팔로워가 적은 계정도 숏폼·인스타그램 마케팅을 할 수 있나요?"
+  answer: |
+    네, 팔로워가 적어도 진행할 수 있습니다. 숏폼은 팔로워가 아닌 사람에게도 추천으로 노출되기 때문에 계정 규모가 작아도 콘텐츠가 도달할 수 있습니다. 다만 도달 규모는 콘텐츠 반응과 알고리즘에 따라 달라집니다.
+
+- id: shortform-03
+  category: service
+  services: [shortform]
+  featured: false
+  updatedAt: 2026-10-14
+  question: "인플루언서 협업 콘텐츠에는 광고 표기를 하나요?"
+  answer: |
+    네, 대가가 제공된 협업 콘텐츠에는 광고·협찬 표기를 합니다. 플랫폼이 제공하는 협찬 표시 기능과 본문 표기를 규정에 맞게 사용합니다. 굿투그레이트(G2G)는 표기 규정을 지키는 범위에서 협업을 진행합니다.

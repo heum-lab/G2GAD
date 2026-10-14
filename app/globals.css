@@ -1,0 +1,64 @@
+@import 'tailwindcss';
+
+/*
+ * 디자인 토큰. 색상·간격·반경은 여기 정의한 값만 쓴다. (CONVENTIONS §5)
+ * TODO: 브랜드 컬러가 확정되면 --color-primary 계열을 교체한다. 현재 값은 임시다.
+ */
+@theme {
+  --font-sans:
+    var(--font-pretendard), var(--font-pretendard-ext), 'Pretendard', -apple-system,
+    BlinkMacSystemFont, system-ui, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+
+  --color-background: #ffffff;
+  --color-foreground: #101828;
+  --color-muted: #f4f6f9;
+  --color-muted-foreground: #556070;
+  --color-border: #dfe3ea;
+  --color-primary: #1b3fd1;
+  --color-primary-hover: #1532a8;
+  --color-primary-foreground: #ffffff;
+  --color-primary-soft: #eaeefc;
+  --color-ink: #0b1220;
+  --color-ink-foreground: #f4f6f9;
+  --color-ink-muted: #b4bccb;
+  --color-danger: #b42318;
+
+  --radius-control: 0.5rem;
+  --radius-card: 0.875rem;
+
+  --container-page: 72rem;
+  --container-prose: 46rem;
+
+  --spacing-section: 4.5rem;
+  --spacing-section-lg: 6.5rem;
+  --spacing-cta-bar: 4rem;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    word-break: keep-all;
+    overflow-wrap: anywhere;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+
+  summary {
+    cursor: pointer;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+}

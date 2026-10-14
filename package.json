@@ -1,0 +1,53 @@
+{
+  "name": "g2g-homepage",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "validate": "node --env-file-if-exists=.env --env-file-if-exists=.env.local --import tsx scripts/validate-content.ts",
+    "build": "pnpm validate && next build",
+    "start": "next start",
+    "lint": "eslint",
+    "typecheck": "next typegen && tsc --noEmit",
+    "test": "vitest run",
+    "test:e2e": "playwright test",
+    "format": "prettier --write ."
+  },
+  "dependencies": {
+    "@hookform/resolvers": "^5.9.1",
+    "@upstash/ratelimit": "^2.2.0",
+    "@upstash/redis": "^1.39.0",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "gray-matter": "^4.0.3",
+    "lucide-react": "^1.55.0",
+    "next": "16.4.0",
+    "next-mdx-remote": "^6.0.0",
+    "postgres": "^3.4.9",
+    "pretendard": "^1.3.9",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "react-hook-form": "^7.90.0",
+    "resend": "^6.32.1",
+    "server-only": "^0.0.1",
+    "tailwind-merge": "^3.7.0",
+    "yaml": "^2.9.1",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.64.0",
+    "@tailwindcss/turbopack": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.4.0",
+    "prettier": "^3.9.10",
+    "prettier-plugin-tailwindcss": "^0.8.1",
+    "tailwindcss": "^4",
+    "tsx": "^4.23.15",
+    "typescript": "^5",
+    "vitest": "^5.0.4"
+  },
+  "packageManager": "pnpm@12.11.2"
+}

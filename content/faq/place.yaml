@@ -1,0 +1,44 @@
+- id: place-01
+  category: service
+  services: [place]
+  featured: false
+  updatedAt: 2026-10-14
+  question: "플레이스 마케팅을 하면 지역 검색에서 상위에 노출되나요?"
+  answer: |
+    상위 노출을 약속드릴 수는 없습니다. 순위는 플랫폼 알고리즘과 주변 매장의 경쟁 상황에 따라 결정되기 때문입니다. 플레이스 마케팅은 매장 정보와 리뷰, 유입을 관리해 노출과 선택의 가능성을 높이는 작업입니다.
+
+- id: place-02
+  category: service
+  services: [place]
+  featured: false
+  updatedAt: 2026-10-14
+  question: "플레이스 등록만 해 두면 충분하지 않나요?"
+  answer: |
+    등록만으로는 충분하지 않은 경우가 많습니다. 고객은 사진, 메뉴, 리뷰, 최근 소식을 비교해 매장을 선택하므로 정보가 비어 있으면 선택받기 어렵습니다. 등록 이후에도 정보를 최신으로 유지하고 리뷰에 답하는 관리가 필요합니다.
+
+- id: place-03
+  category: service
+  services: [place]
+  featured: false
+  updatedAt: 2026-10-14
+  question: "매장이 여러 곳이어도 플레이스 마케팅을 진행할 수 있나요?"
+  answer: |
+    네, 여러 매장도 진행할 수 있습니다. 다만 지역마다 경쟁 환경과 고객이 쓰는 검색어가 다르므로 매장별로 진단하고 계획을 세웁니다. 진행 범위와 견적은 매장 수와 지역에 따라 상담에서 안내합니다.
+
+- id: place-04
+  category: service
+  services: [place]
+  featured: false
+  updatedAt: 2026-10-14
+  question: "플레이스 마케팅에서 리뷰는 어떻게 관리하나요?"
+  answer: |
+    실제 방문 고객이 리뷰를 남기기 쉽도록 안내 동선을 만들고, 남겨진 리뷰에 성실히 답글을 다는 방식으로 관리합니다. 방문 경험이 없는 리뷰를 작성하거나 대가를 숨긴 리뷰를 유도하지 않습니다. 체험단처럼 대가가 제공되는 경우에는 광고·협찬 표기 규정을 따릅니다.
+
+- id: place-05
+  category: service
+  services: [place]
+  featured: false
+  updatedAt: 2026-10-14
+  question: "플레이스 마케팅 효과는 언제부터 나타나나요?"
+  answer: |
+    효과가 나타나는 시점은 업종, 지역의 경쟁 강도, 현재 매장 정보 상태에 따라 달라집니다. 정보 정비처럼 바로 반영되는 작업과 리뷰처럼 쌓이는 데 시간이 필요한 작업이 섞여 있습니다. 예상 일정은 매장 진단 과정에서 함께 논의합니다.

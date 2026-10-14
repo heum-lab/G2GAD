@@ -1,0 +1,154 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`구조화 데이터 > Article 스키마: 저자가 회사명이면 Organization, 아니면 Person 1`] = `
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "author": {
+    "@id": "https://example.test/#organization",
+  },
+  "dateModified": "2026-10-13T00:00:00.000Z",
+  "datePublished": "2026-10-01T00:00:00.000Z",
+  "description": "설명",
+  "headline": "제목",
+  "inLanguage": "ko-KR",
+  "mainEntityOfPage": "https://example.test/insights/sample",
+  "publisher": {
+    "@id": "https://example.test/#organization",
+  },
+  "url": "https://example.test/insights/sample",
+}
+`;
+
+exports[`구조화 데이터 > BreadcrumbList 스키마는 순서와 절대 URL을 가진다 1`] = `
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "item": "https://example.test/",
+      "name": "홈",
+      "position": 1,
+    },
+    {
+      "@type": "ListItem",
+      "item": "https://example.test/services",
+      "name": "서비스",
+      "position": 2,
+    },
+  ],
+}
+`;
+
+exports[`구조화 데이터 > FAQPage 스키마는 질문과 답변을 그대로 담는다 1`] = `
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "답변입니다.",
+      },
+      "name": "질문인가요?",
+    },
+  ],
+}
+`;
+
+exports[`구조화 데이터 > Organization 스키마에 상호·대체 표기·주소·전화가 들어간다 1`] = `
+{
+  "@context": "https://schema.org",
+  "@id": "https://example.test/#organization",
+  "@type": [
+    "Organization",
+    "ProfessionalService",
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "KR",
+    "addressLocality": "용산구",
+    "addressRegion": "서울특별시",
+    "streetAddress": "두텁바위로 59-1, 지층 에프-12호",
+  },
+  "alternateName": [
+    "GOOD TO GREAT",
+    "G2G",
+    "GTOG",
+  ],
+  "department": [
+    {
+      "@type": "Organization",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "KR",
+        "addressLocality": "남동구",
+        "addressRegion": "인천광역시",
+        "streetAddress": "남동대로 353 JK루체스타 328호",
+      },
+      "name": "굿투그레이트 인천지사",
+    },
+    {
+      "@type": "Organization",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "KR",
+        "addressLocality": "해운대구",
+        "addressRegion": "부산광역시",
+        "streetAddress": "센텀동로 71 벽산이센텀클래스워2차 1009호",
+      },
+      "name": "굿투그레이트 부산지사",
+    },
+  ],
+  "description": "AEO·GEO·AI 기반 종합광고대행사",
+  "legalName": "㈜굿투그레이트",
+  "logo": "https://example.test/brand/logo-square.png",
+  "name": "굿투그레이트",
+  "numberOfEmployees": {
+    "@type": "QuantitativeValue",
+    "value": 20,
+  },
+  "taxID": "134-88-03195",
+  "telephone": "070-8831-7081",
+  "url": "https://example.test/",
+}
+`;
+
+exports[`구조화 데이터 > Service 스키마의 provider는 Organization을 참조한다 1`] = `
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "areaServed": {
+    "@type": "Country",
+    "name": "KR",
+  },
+  "description": "설명",
+  "name": "플레이스 마케팅",
+  "provider": {
+    "@id": "https://example.test/#organization",
+  },
+  "serviceType": "플레이스 마케팅",
+  "url": "https://example.test/services/place",
+}
+`;
+
+exports[`구조화 데이터 > WebSite 스키마 1`] = `
+{
+  "@context": "https://schema.org",
+  "@id": "https://example.test/#website",
+  "@type": "WebSite",
+  "alternateName": [
+    "GOOD TO GREAT",
+    "G2G",
+    "GTOG",
+  ],
+  "inLanguage": "ko-KR",
+  "name": "굿투그레이트",
+  "publisher": {
+    "@id": "https://example.test/#organization",
+  },
+  "url": "https://example.test/",
+}
+`;

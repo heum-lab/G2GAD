@@ -1,0 +1,26 @@
+- id: review-01
+  category: service
+  services: [review]
+  featured: false
+  updatedAt: 2026-10-14
+  question: "리뷰 마케팅은 리뷰를 대신 써 주는 서비스인가요?"
+  answer: |
+    아니요, 리뷰 마케팅은 리뷰를 대신 작성하는 서비스가 아닙니다. 실제 구매·이용 고객이 리뷰를 남기기 쉽도록 요청 시점과 안내 방법을 설계하고 답글 응대를 돕는 작업입니다. 경험이 없는 리뷰를 작성하는 것은 플랫폼 정책과 관련 법규에 어긋납니다.
+
+- id: review-02
+  category: service
+  services: [review]
+  featured: false
+  updatedAt: 2026-10-14
+  question: "부정적인 리뷰를 삭제할 수 있나요?"
+  answer: |
+    실제 고객이 남긴 정당한 리뷰는 임의로 삭제할 수 없습니다. 허위 사실이나 욕설처럼 플랫폼 정책을 위반한 리뷰는 플랫폼이 정한 신고 절차를 통해 검토를 요청할 수 있습니다. 그 외의 부정적인 리뷰는 성실한 답글과 개선으로 대응하는 것이 바람직합니다.
+
+- id: review-03
+  category: service
+  services: [review]
+  featured: false
+  updatedAt: 2026-10-14
+  question: "체험단 리뷰에는 광고 표기를 해야 하나요?"
+  answer: |
+    네, 상품이나 비용 등 대가가 제공된 리뷰에는 그 사실을 표기해야 합니다. 표기하지 않으면 관련 법규와 플랫폼 정책에 어긋날 수 있습니다. 굿투그레이트(G2G)는 광고·협찬 표기 규정을 따르는 범위에서 체험단을 운영합니다.

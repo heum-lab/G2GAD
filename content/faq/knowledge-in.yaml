@@ -1,0 +1,26 @@
+- id: knowledge-in-01
+  category: service
+  services: [knowledge-in]
+  featured: false
+  updatedAt: 2026-10-14
+  question: "지식인 마케팅은 어떤 업종에 적합한가요?"
+  answer: |
+    지식인 마케팅은 고객이 결정 전에 구체적인 질문을 많이 하는 업종에 적합합니다. 교육, 전문 서비스, 건강, 인테리어, 고가 상품 등이 대표적입니다. 질문이 거의 올라오지 않는 분야는 효과가 제한적이므로 사전에 질문 현황을 조사합니다.
+
+- id: knowledge-in-02
+  category: service
+  services: [knowledge-in]
+  featured: false
+  updatedAt: 2026-10-14
+  question: "답변에 브랜드나 상품을 언급해도 되나요?"
+  answer: |
+    질문과 직접 관련이 있고 소속을 밝힌 경우에 한해 필요한 범위에서 언급할 수 있습니다. 질문과 무관하게 상품을 권하거나 소속을 숨기는 답변은 서비스 운영 정책에 어긋날 수 있습니다. 굿투그레이트(G2G)는 정보 제공을 중심으로 답변을 작성합니다.
+
+- id: knowledge-in-03
+  category: service
+  services: [knowledge-in]
+  featured: false
+  updatedAt: 2026-10-14
+  question: "지식인 마케팅은 AI 검색에도 도움이 되나요?"
+  answer: |
+    도움이 될 수 있지만 결과를 약속드릴 수는 없습니다. 질문과 직접 답변으로 이루어진 콘텐츠는 AI 검색이 이해하기 쉬운 형태이기 때문입니다. 다만 어떤 출처가 인용될지는 각 AI 서비스가 결정합니다.

@@ -1,0 +1,26 @@
+- id: cafe-01
+  category: service
+  services: [cafe]
+  featured: false
+  updatedAt: 2026-10-14
+  question: "카페 바이럴은 어떤 업종에 적합한가요?"
+  answer: |
+    카페 바이럴은 구매 전에 커뮤니티의 추천과 경험을 많이 참고하는 업종에 적합합니다. 육아용품, 교육, 인테리어, 지역 매장, 취미 용품 등이 대표적입니다. 목표 고객이 활동하는 카페가 뚜렷하지 않은 업종은 다른 채널이 더 맞을 수 있습니다.
+
+- id: cafe-02
+  category: service
+  services: [cafe]
+  featured: false
+  updatedAt: 2026-10-14
+  question: "카페에 홍보 글을 올리면 삭제되거나 제재를 받지 않나요?"
+  answer: |
+    카페 규칙을 따르지 않은 홍보 글은 삭제되거나 활동 제한을 받을 수 있습니다. 그래서 카페가 허용하는 제휴 게시판이나 공식 협찬 방식으로 진행하고 광고 표기를 갖춥니다. 굿투그레이트(G2G)는 진행 전에 각 카페의 운영 규칙을 확인합니다.
+
+- id: cafe-03
+  category: service
+  services: [cafe]
+  featured: false
+  updatedAt: 2026-10-14
+  question: "카페 바이럴의 성과는 어떻게 확인하나요?"
+  answer: |
+    게시글의 조회와 댓글 반응, 게시글을 통한 유입과 문의 변화를 확인합니다. 브랜드명 검색량이나 커뮤니티 내 언급 변화도 참고 지표가 됩니다. 어떤 지표를 볼지는 목표에 맞춰 진행 전에 함께 정합니다.

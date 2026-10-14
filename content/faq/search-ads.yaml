@@ -1,0 +1,26 @@
+- id: search-ads-01
+  category: service
+  services: [search-ads]
+  featured: false
+  updatedAt: 2026-10-14
+  question: "검색광고는 어떤 매체에서 집행하나요?"
+  answer: |
+    검색광고는 포털과 검색엔진이 운영하는 광고 상품을 통해 집행합니다. 어떤 매체를 쓸지는 목표 고객이 주로 이용하는 검색 서비스와 업종 특성에 따라 정합니다. 매체 구성은 진단 후 제안합니다.
+
+- id: search-ads-02
+  category: service
+  services: [search-ads]
+  featured: false
+  updatedAt: 2026-10-14
+  question: "직접 운영하던 광고 계정을 그대로 맡길 수 있나요?"
+  answer: |
+    네, 기존 계정을 유지한 상태로 진단하고 운영을 이어 갈 수 있습니다. 기존 데이터가 남아 있으면 성과가 좋았던 키워드와 낭비된 영역을 파악하기 쉽습니다. 계정 권한 공유 방법은 상담에서 안내합니다.
+
+- id: search-ads-03
+  category: service
+  services: [search-ads]
+  featured: false
+  updatedAt: 2026-10-14
+  question: "광고비 외에 대행 수수료가 별도로 있나요?"
+  answer: |
+    수수료 구조는 매체와 운영 범위에 따라 달라지므로 상담 후 견적에서 함께 안내합니다. 광고비와 대행 비용이 어떻게 구분되는지는 계약 전에 문서로 확인하실 수 있습니다. 궁금한 항목은 견적 단계에서 문의해 주시기 바랍니다.

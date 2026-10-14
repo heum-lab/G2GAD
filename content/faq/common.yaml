@@ -1,0 +1,80 @@
+- id: common-01
+  category: common
+  services: []
+  featured: true
+  updatedAt: 2026-10-14
+  question: "굿투그레이트(G2G)는 어떤 회사인가요?"
+  answer: |
+    굿투그레이트(G2G)는 AEO·GEO와 AI를 기반으로 하는 서울 소재 종합광고대행사입니다. AI 검색 최적화를 비롯해 검색, 바이럴, 인플루언서, 광고 영역의 서비스를 제공합니다. 여러 채널을 한 곳에서 함께 설계할 수 있다는 점이 특징입니다.
+
+- id: common-02
+  category: common
+  services: []
+  featured: true
+  updatedAt: 2026-10-14
+  question: "어떤 서비스가 맞는지 몰라도 상담할 수 있나요?"
+  answer: |
+    네, 서비스를 정하지 않은 상태에서도 상담할 수 있습니다. 업종, 현재 운영 중인 채널, 목표를 확인한 뒤 우선순위가 높은 서비스를 제안합니다. 문의 폼이나 대표번호로 연락해 주시면 됩니다.
+
+- id: common-03
+  category: common
+  services: []
+  featured: false
+  updatedAt: 2026-10-14
+  question: "어떤 업종이든 진행할 수 있나요?"
+  answer: |
+    대부분의 업종에서 상담할 수 있지만, 업종에 따라 적합한 채널과 진행 가능 여부가 달라집니다. 의료, 금융, 건강기능식품처럼 광고 심의나 표기 규정이 있는 업종은 관련 규정을 먼저 확인합니다. 플랫폼 정책상 집행이 어려운 경우에는 상담 단계에서 안내합니다.
+
+- id: cost-01
+  category: cost
+  services: []
+  featured: true
+  updatedAt: 2026-10-14
+  question: "비용은 어떻게 책정되나요?"
+  answer: |
+    비용은 업종, 경쟁 강도, 목표, 진행 기간에 따라 달라지므로 상담 후 견적으로 안내합니다. 같은 서비스라도 대상 지역이나 키워드, 콘텐츠 분량에 따라 필요한 작업 범위가 달라지기 때문입니다. 현황을 확인한 뒤 범위에 맞는 견적을 드립니다.
+
+- id: cost-02
+  category: cost
+  services: []
+  featured: false
+  updatedAt: 2026-10-14
+  question: "견적을 받으려면 어떤 정보를 준비해야 하나요?"
+  answer: |
+    업종, 알리려는 상품이나 매장, 목표, 희망 예산 범위를 알려 주시면 견적을 준비할 수 있습니다. 현재 운영 중인 채널과 과거에 진행한 마케팅 내용이 있으면 함께 알려 주시는 것이 좋습니다. 정해지지 않은 항목은 상담하면서 함께 정리합니다.
+
+- id: cost-03
+  category: cost
+  services: []
+  featured: false
+  updatedAt: 2026-10-14
+  question: "예산이 크지 않아도 진행할 수 있나요?"
+  answer: |
+    예산 규모에 맞춰 진행 범위를 조정해 상담할 수 있습니다. 모든 채널을 한꺼번에 진행하기보다 우선순위가 높은 서비스부터 시작하는 방법을 제안합니다. 예산에 맞는 구성이 어려운 경우에는 상담 단계에서 그대로 말씀드립니다.
+
+- id: contract-01
+  category: contract
+  services: []
+  featured: true
+  updatedAt: 2026-10-14
+  question: "효과가 나타나기까지 얼마나 걸리나요?"
+  answer: |
+    효과가 나타나는 시점은 서비스 종류, 업종, 경쟁 강도, 현재 상태에 따라 달라집니다. 광고처럼 집행과 함께 유입이 생기는 서비스와 콘텐츠처럼 쌓이는 데 시간이 필요한 서비스가 있습니다. 예상 일정은 진단 과정에서 함께 논의합니다.
+
+- id: contract-02
+  category: contract
+  services: []
+  featured: false
+  updatedAt: 2026-10-14
+  question: "계약 기간은 어떻게 정해지나요?"
+  answer: |
+    계약 기간은 서비스 종류와 목표에 따라 상담 과정에서 협의해 정합니다. 기간, 작업 범위, 리포트 방식 같은 조건은 계약서에 명시합니다. 중도 변경이나 해지에 관한 사항도 계약서에 정한 내용을 따릅니다.
+
+- id: contract-03
+  category: contract
+  services: []
+  featured: true
+  updatedAt: 2026-10-14
+  question: "원하는 순위나 성과를 약속받을 수 있나요?"
+  answer: |
+    아니요, 특정 순위나 성과는 약속드리지 않습니다. 검색 순위와 노출은 플랫폼 알고리즘과 경쟁 상황에 따라 결정되기 때문입니다. 대신 목표 지표를 함께 정하고 진행 상황과 결과를 리포트로 공유합니다.

@@ -1,0 +1,36 @@
+# 정적 검사·단위 테스트·빌드 (ARCHITECTURE §11)
+# E2E와 Lighthouse CI는 Vercel 프리뷰 배포가 끝난 뒤 preview-checks.yml에서 실행한다.
+name: CI
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      # 빌드에 필요한 공개 변수만 더미 값으로 채운다. 서버 비밀값은 빌드에 쓰이지 않는다.
+      NEXT_PUBLIC_SITE_URL: https://gtog2024.com
+      NEXT_PUBLIC_GA_ID: G-CI0000000
+      NEXT_PUBLIC_NAVER_ANALYTICS_ID: ci
+    steps:
+      - uses: actions/checkout@v5
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 24
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm lint
+      - run: pnpm typecheck
+      - run: pnpm test
+      - run: pnpm build
+      - name: 의존성 취약점 점검
+        run: pnpm audit --prod --audit-level high

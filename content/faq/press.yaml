@@ -1,0 +1,26 @@
+- id: press-01
+  category: service
+  services: [press]
+  featured: false
+  updatedAt: 2026-10-14
+  question: "어떤 소식이 언론보도에 적합한가요?"
+  answer: |
+    신제품 출시, 매장 오픈, 수상, 투자 유치, 제휴, 사회공헌 활동처럼 새롭고 사실 확인이 가능한 소식이 적합합니다. 단순한 할인 행사나 홍보 문구만으로는 기사로 다뤄지기 어렵습니다. 굿투그레이트(G2G)는 상담에서 회사의 최근 소식 중 보도 가치가 있는 내용을 함께 찾습니다.
+
+- id: press-02
+  category: service
+  services: [press]
+  featured: false
+  updatedAt: 2026-10-14
+  question: "보도자료를 배포하면 기사가 반드시 나오나요?"
+  answer: |
+    아닙니다. 보도자료를 기사로 다룰지는 각 언론사가 편집 기준에 따라 판단하므로 게재 여부와 매체를 미리 약속할 수 없습니다. G2G는 소식에 맞는 매체를 고르고 기사로 쓰기 좋은 형태로 보도자료를 작성해 게재 가능성을 높입니다.
+
+- id: press-03
+  category: service
+  services: [press]
+  featured: false
+  updatedAt: 2026-10-14
+  question: "보도자료에 들어갈 내용은 누가 확인하나요?"
+  answer: |
+    보도자료는 G2G가 초안을 작성하고 고객사가 최종 확인한 뒤 배포합니다. 수치, 수상 내역, 제휴사 이름처럼 사실 확인이 필요한 내용은 근거 자료를 함께 확인합니다. 배포된 기사는 수정이 어려우므로 확정 전 검토를 꼼꼼히 진행합니다.
