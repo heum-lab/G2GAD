@@ -4,7 +4,7 @@
 |---|---|
 | 문서 버전 | v0.2 (초안, 변경 이력은 §11) |
 | 작성일 | 2026-10-13 |
-| 대상 도메인 | https://gtog2024.com |
+| 대상 도메인 | https://gtog2024.co.kr |
 | 관련 문서 | [ARCHITECTURE.md](./ARCHITECTURE.md), [CONVENTIONS.md](./CONVENTIONS.md) |
 
 ---

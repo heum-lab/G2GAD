@@ -17,7 +17,7 @@ jobs:
     timeout-minutes: 15
     env:
       # 빌드에 필요한 공개 변수만 더미 값으로 채운다. 서버 비밀값은 빌드에 쓰이지 않는다.
-      NEXT_PUBLIC_SITE_URL: https://gtog2024.com
+      NEXT_PUBLIC_SITE_URL: https://gtog2024.co.kr
       NEXT_PUBLIC_GA_ID: G-CI0000000
       NEXT_PUBLIC_NAVER_ANALYTICS_ID: ci
     steps:

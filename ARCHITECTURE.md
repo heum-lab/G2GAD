@@ -142,7 +142,7 @@ export const site = {
   name: '굿투그레이트',
   legalName: '㈜굿투그레이트',
   alternateNames: ['GOOD TO GREAT', 'G2G', 'GTOG'],
-  url: 'https://gtog2024.com',
+  url: 'https://gtog2024.co.kr',
   phone: '070-8831-7081',
   address: {
     street: '두텁바위로 59-1, 지층 에프-12호',
@@ -411,8 +411,8 @@ STAGING_BASIC_AUTH=           # 선택 (스테이징 전용, user:pass)
 | 환경 | 브랜치 | URL |
 |---|---|---|
 | Preview | PR 브랜치 | Vercel 자동 프리뷰 (`noindex`) |
-| Staging | `develop` | staging.gtog2024.com (`noindex`, Basic Auth) |
-| Production | `main` | gtog2024.com |
+| Staging | `develop` | staging.gtog2024.co.kr (`noindex`, Basic Auth) |
+| Production | `main` | gtog2024.co.kr |
 
 **CI (GitHub Actions)**: `lint → typecheck → test(unit) → build(콘텐츠 검증 포함) → e2e(프리뷰 URL 대상) → Lighthouse CI(예산 미달 시 실패)`
 

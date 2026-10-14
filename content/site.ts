@@ -20,7 +20,7 @@ export const site = {
   legalName: '㈜굿투그레이트',
   alternateNames: ['GOOD TO GREAT', 'G2G', 'GTOG'],
   tagline: 'AEO·GEO·AI 기반 종합광고대행사',
-  url: 'https://gtog2024.com',
+  url: 'https://gtog2024.co.kr',
   phone: '070-8831-7081',
   // 본사
   address: {
