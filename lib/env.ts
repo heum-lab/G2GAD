@@ -4,8 +4,9 @@ import { z } from 'zod';
 
 const PublicEnvSchema = z.object({
   NEXT_PUBLIC_SITE_URL: z.url(),
-  NEXT_PUBLIC_GA_ID: z.string().min(1),
-  NEXT_PUBLIC_NAVER_ANALYTICS_ID: z.string().min(1),
+  // 분석 ID는 선택. 없으면 해당 스크립트를 싣지 않는다 (둘 다 없으면 쿠키 배너도 숨긴다).
+  NEXT_PUBLIC_GA_ID: z.string().min(1).optional(),
+  NEXT_PUBLIC_NAVER_ANALYTICS_ID: z.string().min(1).optional(),
 });
 
 const ServerEnvSchema = z.object({
@@ -47,9 +48,14 @@ function parseEnv<T>(schema: z.ZodType<T>, values: unknown): T {
 // NEXT_PUBLIC_* 값은 클라이언트 번들에 인라인되도록 정적으로 참조한다.
 export const publicEnv = parseEnv(PublicEnvSchema, {
   NEXT_PUBLIC_SITE_URL: process.env.NEXT_PUBLIC_SITE_URL,
-  NEXT_PUBLIC_GA_ID: process.env.NEXT_PUBLIC_GA_ID,
-  NEXT_PUBLIC_NAVER_ANALYTICS_ID: process.env.NEXT_PUBLIC_NAVER_ANALYTICS_ID,
+  NEXT_PUBLIC_GA_ID: process.env.NEXT_PUBLIC_GA_ID || undefined,
+  NEXT_PUBLIC_NAVER_ANALYTICS_ID: process.env.NEXT_PUBLIC_NAVER_ANALYTICS_ID || undefined,
 });
+
+/** 분석 도구가 하나라도 설정되어 있는지. 쿠키 동의 배너 노출 여부에 쓴다. */
+export const hasAnalytics = Boolean(
+  publicEnv.NEXT_PUBLIC_GA_ID || publicEnv.NEXT_PUBLIC_NAVER_ANALYTICS_ID,
+);
 
 export type ServerEnv = z.infer<typeof ServerEnvSchema>;
 

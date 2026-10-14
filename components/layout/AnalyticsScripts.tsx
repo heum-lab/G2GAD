@@ -5,8 +5,8 @@ import { useSyncExternalStore } from 'react';
 import { readConsent, serverConsent, subscribeConsent } from '@/lib/consent';
 
 type AnalyticsScriptsProps = {
-  gaId: string;
-  naverId: string;
+  gaId?: string;
+  naverId?: string;
 };
 
 /**
@@ -19,29 +19,35 @@ export function AnalyticsScripts({ gaId, naverId }: AnalyticsScriptsProps) {
 
   return (
     <>
-      <Script
-        src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}
-        strategy="afterInteractive"
-      />
-      <Script id="ga4-init" strategy="afterInteractive">
-        {`window.dataLayer = window.dataLayer || [];
+      {gaId ? (
+        <>
+          <Script
+            src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}
+            strategy="afterInteractive"
+          />
+          <Script id="ga4-init" strategy="afterInteractive">
+            {`window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 window.gtag = gtag;
 gtag('js', new Date());
 gtag('config', ${JSON.stringify(gaId)});`}
-      </Script>
-      <Script
-        src="https://wcs.naver.net/wcslog.js"
-        strategy="afterInteractive"
-        onLoad={() => {
-          const win = window as unknown as {
-            wcs_add?: Record<string, string>;
-            wcs_do?: () => void;
-          };
-          win.wcs_add = { ...(win.wcs_add ?? {}), wa: naverId };
-          win.wcs_do?.();
-        }}
-      />
+          </Script>
+        </>
+      ) : null}
+      {naverId ? (
+        <Script
+          src="https://wcs.naver.net/wcslog.js"
+          strategy="afterInteractive"
+          onLoad={() => {
+            const win = window as unknown as {
+              wcs_add?: Record<string, string>;
+              wcs_do?: () => void;
+            };
+            win.wcs_add = { ...(win.wcs_add ?? {}), wa: naverId };
+            win.wcs_do?.();
+          }}
+        />
+      ) : null}
     </>
   );
 }

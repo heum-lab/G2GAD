@@ -5,7 +5,7 @@ import { CookieBanner } from '@/components/layout/CookieBanner';
 import { LandingTracker } from '@/components/layout/LandingTracker';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { site } from '@/content/site';
-import { absoluteUrl, isIndexable, publicEnv } from '@/lib/env';
+import { absoluteUrl, hasAnalytics, isIndexable, publicEnv } from '@/lib/env';
 import { TITLE_SUFFIX } from '@/lib/seo/metadata';
 import { organization, webSite } from '@/lib/seo/schema';
 import './globals.css';
@@ -54,12 +54,14 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
     >
       <body className="flex min-h-dvh flex-col">
         {children}
-        <CookieBanner />
+        {hasAnalytics ? <CookieBanner /> : null}
         <LandingTracker />
-        <AnalyticsScripts
-          gaId={publicEnv.NEXT_PUBLIC_GA_ID}
-          naverId={publicEnv.NEXT_PUBLIC_NAVER_ANALYTICS_ID}
-        />
+        {hasAnalytics ? (
+          <AnalyticsScripts
+            gaId={publicEnv.NEXT_PUBLIC_GA_ID}
+            naverId={publicEnv.NEXT_PUBLIC_NAVER_ANALYTICS_ID}
+          />
+        ) : null}
         <JsonLd data={[organization(absoluteUrl), webSite(absoluteUrl)]} />
       </body>
     </html>
