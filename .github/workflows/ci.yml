@@ -22,7 +22,7 @@ jobs:
       NEXT_PUBLIC_NAVER_ANALYTICS_ID: ci
     steps:
       - uses: actions/checkout@v5
-      - uses: pnpm/action-setup@v4
+      - uses: pnpm/action-setup@v6
       - uses: actions/setup-node@v5
         with:
           node-version: 24
