@@ -11,7 +11,9 @@
     "typecheck": "next typegen && tsc --noEmit",
     "test": "vitest run",
     "test:e2e": "playwright test",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "db:migrate": "node --env-file-if-exists=.env.local --import tsx scripts/db-migrate.mts",
+    "admin:hash": "node --import tsx scripts/admin-hash.ts"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.9.1",

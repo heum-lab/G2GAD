@@ -2,7 +2,7 @@
 
 | 항목 | 내용 |
 |---|---|
-| 문서 버전 | v0.4 (변경 이력은 §14) |
+| 문서 버전 | v0.5 (변경 이력은 §14) |
 | 작성일 | 2026-10-13 |
 | 관련 문서 | [PRD.md](./PRD.md), [CONVENTIONS.md](./CONVENTIONS.md) |
 
@@ -344,11 +344,25 @@ GET /api/brochures/[type]
 | utm_source / medium / campaign | text | |
 | landing_path, referrer | text | |
 | consent_at | timestamptz | 동의 시각 |
-| status | enum(new, contacted, won, lost) | |
+| status | enum(new, contacted, won, lost) | 어드민에서 변경 (신규·상담중·계약·종료) |
+| memo | text | 어드민 내부 메모 |
+| updated_at | timestamptz | 어드민 마지막 수정 시각 |
 
 - `brochure_leads` 테이블(P1): `id, created_at, email, type, consent_at, utm_*, landing_path`.
 - 개인정보 보유기간이 지나면 파기한다. 기간은 개인정보처리방침의 고지 기간과 일치시키고(PRD §10 미결), Vercel Cron이 `/api/cron/purge-leads`를 매일 호출해 처리한다. 이 경로는 `CRON_SECRET`으로 보호한다.
 - DB 접근 키는 서버에서만 쓴다. 클라이언트에 노출하지 않는다.
+- DB는 Vercel Marketplace의 Neon(싱가포르)이다. 스키마는 `db/schema.sql`(멱등)이고 `pnpm db:migrate`로 적용한다.
+- 현재 Production과 Preview가 같은 DB를 쓴다. 프리뷰에서 문의를 제출하면 운영 데이터에 들어간다.
+
+### 7.4 문의 관리 어드민 (`/admin`)
+
+- 문의 목록(검색·상태 필터·페이지), 상세(상태·내부 메모 수정), 삭제(개인정보 삭제 요청 처리용), CSV 내보내기(BOM 포함, 수식 인젝션 방지).
+- 인증: 아이디·비밀번호. 계정은 환경 변수 `ADMIN_ACCOUNTS`(`아이디:scrypt해시`, 콤마 구분)에 둔다. 해시는 `pnpm admin:hash`로 만든다.
+- 세션: HMAC 서명 쿠키 `g2g_admin`(httpOnly, Secure, SameSite=Lax, path=/admin, 8시간). 서버에 상태를 두지 않으며 `ADMIN_SESSION_SECRET`을 바꾸면 모든 세션이 끊긴다.
+- 로그인은 IP당 10회/15분으로 제한한다(Upstash).
+- 페이지·Server Action·Route Handler가 모두 데이터 접근 전에 세션을 직접 확인한다(`lib/admin/auth.ts`, `lib/admin/leads.ts`). 개인정보이므로 캐시하지 않는다.
+- 세션 확인은 쿠키를 먼저 읽고 `connection()`을 호출한다. 그렇지 않으면 빌드 때 로그인 리디렉트가 프리렌더로 고정된다.
+- `/admin`은 `noindex` 헤더·메타, `robots.txt` 차단, `Cache-Control: private, no-store`. 쿠키 배너·분석·유입 추적·조직 스키마는 `(site)` 레이아웃에만 있어 어드민에는 실리지 않는다.
 
 ---
 
@@ -370,29 +384,11 @@ GET /api/brochures/[type]
 
 ## 9. 환경 변수
 
-`lib/env.ts`에서 Zod로 검증한다. 누락되면 빌드가 실패한다.
+`lib/env.ts`에서 Zod로 검증한다. 서버 변수는 기능별(database, mail, slack, rateLimit, cron, admin)로 나눠 검증하므로, 한 기능의 키가 없어도 다른 기능은 동작한다. 예: DB만 있으면 문의는 저장되고 알림만 실패한다. 목록과 설명은 `.env.example`이 기준이다.
 
-```
-NEXT_PUBLIC_SITE_URL=
-NEXT_PUBLIC_GA_ID=
-NEXT_PUBLIC_NAVER_ANALYTICS_ID=
-DATABASE_URL=
-RESEND_API_KEY=
-INQUIRY_FROM_EMAIL=           # 발신 주소 (Resend에서 인증한 도메인)
-INQUIRY_NOTIFY_EMAILS=        # 콤마 구분
-SLACK_WEBHOOK_URL=
-RATE_LIMIT_REDIS_URL=         # 필수 (Upstash)
-RATE_LIMIT_REDIS_TOKEN=       # 필수 (Upstash)
-CRON_SECRET=                  # 개인정보 파기 크론 보호
-LEAD_RETENTION_DAYS=          # 선택. 미설정 시 파기 크론은 아무것도 지우지 않는다
-BROCHURE_TOKEN_SECRET=        # 선택 (P1, 소개서 링크 서명)
-STAGING_BASIC_AUTH=           # 선택 (스테이징 전용, user:pass)
-```
-
-- 검증은 `pnpm validate`(빌드 전 자동 실행)와 `lib/env.ts`에서 한다.
-
-- Preview·Staging·Production 환경마다 값을 등록한다. 누락 시 빌드가 실패하므로 프리뷰 배포에도 필요하다.
-- 실제 변수 이름은 Marketplace 연동이 주입하는 이름에 맞춰 조정한다.
+- 빌드 전 `pnpm validate`가 기능별 설정 여부를 출력한다. 기본은 경고만 하고, `STRICT_ENV=1`이면 하나라도 빠졌을 때 빌드가 실패한다. 서버 키를 모두 등록한 뒤 Production에 `STRICT_ENV=1`을 설정한다.
+- Marketplace 연동이 주입하는 이름을 그대로 쓴다: Neon → `DATABASE_URL`, Upstash → `KV_REST_API_URL`·`KV_REST_API_TOKEN`(`RATE_LIMIT_REDIS_*`가 없으면 이 값을 쓴다).
+- `NEXT_PUBLIC_GA_ID`·`NEXT_PUBLIC_NAVER_ANALYTICS_ID`는 선택이다. 없으면 해당 스크립트를 싣지 않고, 둘 다 없으면 쿠키 배너도 숨긴다.
 
 ---
 
@@ -448,3 +444,4 @@ STAGING_BASIC_AUTH=           # 선택 (스테이징 전용, user:pass)
 | v0.2 | 2026-10-13 | 비개발자 편집 방식 추가(§4.0), 콘텐츠 모델 보강(`summary`/`description` 분리, Case·FAQ `updatedAt`, Case `author`·`cover`), FAQ 스키마 중복 제거(§6.2), 문의 파이프라인 재설계(결과 객체 반환, 클라이언트 전환 이벤트, 저장 실패 폴백), 소개서 다운로드 설계(§7.2), 레이트리밋 Redis 필수화, DB 후보 정정, `middleware.ts` → `next.config` 헤더 + `proxy.ts`, CSP 방침, Tailwind v4, 인사이트 렌더링 표기 통일, 문서 위치 정정 |
 | v0.3 | 2026-10-14 | 구현 반영: `ensureStatic`으로 정적 출력 강제(§5), 환경 변수 `INQUIRY_FROM_EMAIL`·`LEAD_RETENTION_DAYS` 추가(§9). `components/ui`는 Radix 없이 네이티브 요소 기반의 shadcn 방식 프리미티브로 시작했다(아코디언은 `<details>`) |
 | v0.4 | 2026-10-14 | 웹폰트를 main/ext 두 파일로 분리(§12), CI 워크플로·Lighthouse CI 설정 추가(§11) |
+| v0.5 | 2026-10-14 | 대표 도메인 gtog2024.co.kr, Neon·Upstash 연결(§7.3), 문의 관리 어드민(§7.4), 환경 변수 기능별 검증(§9) |

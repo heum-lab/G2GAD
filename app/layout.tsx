@@ -1,13 +1,8 @@
 import type { Metadata, Viewport } from 'next';
 import localFont from 'next/font/local';
-import { AnalyticsScripts } from '@/components/layout/AnalyticsScripts';
-import { CookieBanner } from '@/components/layout/CookieBanner';
-import { LandingTracker } from '@/components/layout/LandingTracker';
-import { JsonLd } from '@/components/seo/JsonLd';
 import { site } from '@/content/site';
-import { absoluteUrl, hasAnalytics, isIndexable, publicEnv } from '@/lib/env';
+import { isIndexable, publicEnv } from '@/lib/env';
 import { TITLE_SUFFIX } from '@/lib/seo/metadata';
-import { organization, webSite } from '@/lib/seo/schema';
 import './globals.css';
 
 // Pretendard를 두 파일로 나눴다 (scripts/subset-font.py로 생성).
@@ -52,18 +47,7 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
       lang="ko"
       className={`${pretendard.variable} ${pretendardExt.variable} antialiased`}
     >
-      <body className="flex min-h-dvh flex-col">
-        {children}
-        {hasAnalytics ? <CookieBanner /> : null}
-        <LandingTracker />
-        {hasAnalytics ? (
-          <AnalyticsScripts
-            gaId={publicEnv.NEXT_PUBLIC_GA_ID}
-            naverId={publicEnv.NEXT_PUBLIC_NAVER_ANALYTICS_ID}
-          />
-        ) : null}
-        <JsonLd data={[organization(absoluteUrl), webSite(absoluteUrl)]} />
-      </body>
+      <body className="flex min-h-dvh flex-col">{children}</body>
     </html>
   );
 }

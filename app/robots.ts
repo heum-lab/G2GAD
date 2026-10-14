@@ -12,7 +12,7 @@ const AI_CRAWLERS = [
   'Yeti',
 ];
 
-const DISALLOW = ['/contact/thanks', '/api/'];
+const DISALLOW = ['/contact/thanks', '/api/', '/admin'];
 
 export default function robots(): MetadataRoute.Robots {
   // Preview·Staging은 전체 차단한다.

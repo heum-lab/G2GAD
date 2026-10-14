@@ -1,21 +1,8 @@
 import 'server-only';
-import postgres from 'postgres';
-import { serverEnv } from '@/lib/env';
+import { sql } from '@/lib/db';
 import type { InquiryInput } from './schema';
 
 // leads 테이블 저장. 스키마는 db/schema.sql. (ARCHITECTURE §7.3)
-
-let client: postgres.Sql | undefined;
-
-function sql() {
-  client ??= postgres(serverEnv().DATABASE_URL, {
-    max: 1,
-    connect_timeout: 5,
-    idle_timeout: 20,
-    prepare: false,
-  });
-  return client;
-}
 
 const emptyToNull = (value: string) => (value === '' ? null : value);
 

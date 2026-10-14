@@ -1,7 +1,13 @@
 -- 문의 리드 저장 테이블. (ARCHITECTURE §7.3)
--- Postgres(Neon 또는 Supabase)에 한 번 실행한다.
+-- 여러 번 실행해도 안전하다(멱등). 적용: pnpm db:migrate
 
-create type lead_status as enum ('new', 'contacted', 'won', 'lost');
+do $$
+begin
+  create type lead_status as enum ('new', 'contacted', 'won', 'lost');
+exception
+  when duplicate_object then null;
+end
+$$;
 
 create table if not exists leads (
   id            uuid primary key,
@@ -22,4 +28,9 @@ create table if not exists leads (
   status        lead_status not null default 'new'
 );
 
+-- 어드민(문의 관리)용 컬럼
+alter table leads add column if not exists memo text;
+alter table leads add column if not exists updated_at timestamptz;
+
 create index if not exists leads_created_at_idx on leads (created_at);
+create index if not exists leads_status_idx on leads (status);

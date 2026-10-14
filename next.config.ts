@@ -21,7 +21,17 @@ const nextConfig: NextConfig = {
     return redirects;
   },
   async headers() {
-    return [{ source: '/:path*', headers: securityHeaders }];
+    return [
+      { source: '/:path*', headers: securityHeaders },
+      // 어드민은 검색엔진 색인·캐시 금지
+      {
+        source: '/admin/:path*',
+        headers: [
+          { key: 'X-Robots-Tag', value: 'noindex, nofollow' },
+          { key: 'Cache-Control', value: 'private, no-store' },
+        ],
+      },
+    ];
   },
 };
 

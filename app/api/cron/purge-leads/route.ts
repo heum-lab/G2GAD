@@ -17,7 +17,7 @@ export async function GET(request: Request) {
   await connection();
   let env;
   try {
-    env = serverEnv();
+    env = serverEnv('cron');
   } catch {
     // 서버 환경 변수가 없는 환경(프리뷰 등)
     return Response.json({ ok: false }, { status: 503 });

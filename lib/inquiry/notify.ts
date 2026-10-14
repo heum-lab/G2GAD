@@ -41,7 +41,7 @@ function buildText({ leadRef, input, serviceTitles, stored }: NotifyContext) {
 
 /** 본문은 텍스트로만 보낸다(HTML 미사용이므로 이스케이프가 필요 없다). */
 export async function sendInquiryEmail(context: NotifyContext) {
-  const env = serverEnv();
+  const env = serverEnv('mail');
   const resend = new Resend(env.RESEND_API_KEY);
   const prefix = context.stored ? '' : '[DB 저장 실패] ';
   const { error } = await resend.emails.send({
@@ -55,7 +55,7 @@ export async function sendInquiryEmail(context: NotifyContext) {
 }
 
 export async function sendInquirySlack(context: NotifyContext) {
-  const response = await fetch(serverEnv().SLACK_WEBHOOK_URL, {
+  const response = await fetch(serverEnv('slack').SLACK_WEBHOOK_URL, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ text: buildText(context) }),

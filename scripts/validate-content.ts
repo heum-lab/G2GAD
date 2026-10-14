@@ -2,20 +2,24 @@
 // 서버 환경 변수는 STRICT_ENV=1일 때만 필수다. 없으면 경고만 하고 빌드를 계속하며,
 // 그 상태에서는 문의 제출이 오류 안내(대표번호)로 끝난다.
 // TODO: 서버 키를 모두 등록하면 Vercel Production에 STRICT_ENV=1을 설정한다.
-import { serverEnv } from '@/lib/env';
+import { serverEnvStatus } from '@/lib/env';
 import { getCases, getFaqs, getInsights, getServices } from '@/lib/content/loader';
 import { validateContent } from '@/lib/content/validate';
 
 const requireServerEnv = process.env.STRICT_ENV === '1';
 
 try {
-  try {
-    serverEnv();
-  } catch (error) {
-    if (requireServerEnv) throw error;
+  const missing = Object.entries(serverEnvStatus()).filter(([, status]) => !status.ok);
+  if (missing.length > 0) {
+    const detail = missing
+      .map(
+        ([feature, status]) =>
+          `  - ${feature}: ${status.ok ? '' : status.issues.join(', ')}`,
+      )
+      .join('\n');
+    if (requireServerEnv) throw new Error(`서버 환경 변수 누락:\n${detail}`);
     console.warn(
-      `[경고] 서버 환경 변수가 없어 문의 저장·알림이 동작하지 않습니다.
-${error instanceof Error ? error.message : error}`,
+      `[경고] 설정되지 않은 기능이 있습니다. 해당 기능은 동작하지 않습니다.\n${detail}`,
     );
   }
   const errors = validateContent();
