@@ -16,7 +16,7 @@ import { buildMetadata } from '@/lib/seo/metadata';
 export const metadata = buildMetadata({
   title: `${site.name}(G2G) | ${site.tagline}`,
   description:
-    '굿투그레이트(G2G)는 AEO·GEO 기반 AI 검색 최적화와 플레이스, 리뷰, 인플루언서 마케팅을 진단부터 집행, 리포트까지 수행하는 종합광고대행사입니다.',
+    '굿투그레이트(G2G)는 AEO·GEO AI 검색 최적화와 플레이스, 리뷰, 인플루언서 마케팅을 진단부터 집행, 리포트까지 수행하는 종합광고대행사',
   path: '/',
   absoluteTitle: true,
 });
