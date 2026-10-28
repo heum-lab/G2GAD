@@ -11,7 +11,7 @@ const crumbs = [{ name: '서비스', path: '/services' }];
 export const metadata = buildMetadata({
   title: '서비스 전체',
   description:
-    'AI 검색 최적화(AEO·GEO), 플레이스, 리워드 트래픽, 리뷰·카페·블로그 바이럴, 언론보도, 라이브커머스, 인플루언서, 검색광고까지 굿투그레이트(G2G)가 제공하는 마케팅 서비스를 한눈에 확인하세요.',
+    'AI 검색 최적화(AEO·GEO), 플레이스, 참여형 광고, 리뷰·카페·블로그 바이럴, 언론보도, 라이브커머스, 인플루언서, 검색광고까지 굿투그레이트(G2G)가 제공하는 마케팅 서비스를 한눈에 확인하세요.',
   path: '/services',
 });
 
