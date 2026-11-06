@@ -10,7 +10,7 @@ import { buildMetadata } from '@/lib/seo/metadata';
 export const metadata = buildMetadata({
   title: '회사소개',
   description:
-    '굿투그레이트(G2G)는 AEO·GEO·AI 기반 종합광고대행사입니다. 회사 정보와 제공 서비스, 서울 용산구 사무실 오시는 길, 대표번호와 사업자 정보를 안내합니다.',
+    '굿투그레이트(G2G)는 AEO·GEO·AI 기반 종합광고대행사입니다. 회사 정보와 제공 서비스, 인천 남동구 본사와 부산지사 오시는 길, 대표번호와 사업자 정보를 안내합니다.',
   path: '/about',
 });
 

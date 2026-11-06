@@ -145,13 +145,13 @@ export const site = {
   url: 'https://gtog2024.co.kr',
   phone: '070-8831-7081',
   address: {
-    street: '두텁바위로 59-1, 지층 에프-12호',
-    locality: '용산구',
-    region: '서울특별시',
+    street: '남동대로 353 JK루체스타 332-1호',
+    locality: '남동구',
+    region: '인천광역시',
     country: 'KR',
   },
   bizRegNo: '134-88-03195',
-  ecommerceRegNo: '2024-서울용산-1282',
+  ecommerceRegNo: '2026-인천남동구-1772호',
   privacyOfficer: '심재찬',
   sameAs: [] as string[],        // TODO: 블로그·인스타·유튜브 등
   kakaoChannel: '',              // TODO

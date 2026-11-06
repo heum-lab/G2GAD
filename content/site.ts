@@ -24,21 +24,12 @@ export const site = {
   phone: '070-8831-7081',
   // 본사
   address: {
-    street: '두텁바위로 59-1, 지층 에프-12호',
-    locality: '용산구',
-    region: '서울특별시',
+    street: '남동대로 353 JK루체스타 332-1호',
+    locality: '남동구',
+    region: '인천광역시',
     country: 'KR',
   } satisfies PostalAddress,
   branches: [
-    {
-      name: '인천지사',
-      address: {
-        street: '남동대로 353 JK루체스타 328호',
-        locality: '남동구',
-        region: '인천광역시',
-        country: 'KR',
-      },
-    },
     {
       name: '부산지사',
       address: {
@@ -50,7 +41,7 @@ export const site = {
     },
   ] satisfies { name: string; address: PostalAddress }[],
   bizRegNo: '134-88-03195',
-  ecommerceRegNo: '2024-서울용산-1282',
+  ecommerceRegNo: '2026-인천남동구-1772호',
   ceo: '심재찬',
   privacyOfficer: '심재찬',
   // TODO: 직원 수·매출의 기준 연도(예: "2025년 기준")를 확인해 asOf에 넣는다. (PRD A-07)
